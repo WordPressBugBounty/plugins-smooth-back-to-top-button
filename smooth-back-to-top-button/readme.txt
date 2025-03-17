@@ -1,11 +1,11 @@
 === Smooth Back To Top Button ===
 Contributors: tanvirul
 Donate link:
-Tags: scroll to top, back to top, scroll top, scroll up, wordpress scroll top, scroll back to top, scroll progress indicator, back to top button
+Tags: scroll to top, back to top, back to top button, scroll top, scroll up, wordpress scroll top, scroll back to top, scroll progress indicator
 Requires PHP: 7.4
 Requires at least: 4.8
-Tested up to: 6.5
-Stable tag: 1.1.14
+Tested up to: 6.7
+Stable tag: 1.1.15
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,15 +13,15 @@ Smooth Back To Top button with scroll progress indicator.
 
 == Description ==
 
-The Smooth **Back To Top** button with **Scroll Progress Indicator** will allow your visitors to easily scroll back to the top of the page.
+The WordPress Back To Top button with scroll progress indicator will allow your visitors to easily scroll back to the top of the page.
 
-It’s a lightweight and **fully customizable** plugin that gives you lots of features such as:
+It’s a lightweight and fully customizable plugin that gives you lots of features such as:
 
 = Features: =
 * Button shows when the user scrolls down the page.
-* Scroll back to top with smooth animation.
+* Scroll back to top button with smooth animation.
 * Ready to use without any setup.
-* Scroll progress indicator.
+* Smooth scroll progress indicator.
 * Change scroll duration.
 * Change button offset.
 * Unlimited colors option.
@@ -31,7 +31,7 @@ It’s a lightweight and **fully customizable** plugin that gives you lots of fe
 * Button Enable/Disable.
 * Progress Enable/Disable.
 * Custom size for button and icon.
-* Custom CSS support.
+* Custom back to top button CSS support.
 * Show/Hide on small devices.
 * Async JavaScript.
 * Support on admin panel.
@@ -83,6 +83,10 @@ If you are unable to use any of the methods due to internet connectivity and fil
 2. Smooth Back To Top Button settings page.
 
 == Changelog ==
+
+= 1.1.15 =
+* Add - WordPress 6.7+ compatibility.
+* Fix - Admin settings panel.
 
 = 1.1.14 =
 * Add - WordPress 6.5+ compatibility.
