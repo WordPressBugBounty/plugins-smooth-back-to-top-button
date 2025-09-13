@@ -5,10 +5,10 @@ Plugin URI: https://wordpress.org/plugins/smooth-back-to-top-button/
 Description: The best WordPress smooth back to top button plugin with scroll progress indicator.
 Author: Tanvirul Haque
 Author URI: https://wpxpress.net/
-Version: 1.1.15
+Version: 1.2
 Requires PHP: 7.4
 Requires at least: 4.8
-Tested up to: 6.7
+Tested up to: 6.8
 Text Domain: smooth-back-to-top-button
 Domain Path: /languages
 License: GPLv2 or later
@@ -33,7 +33,7 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 		 * @since 1.0.0
 		 * @var  string
 		 */
-		public $version = '1.1.15';
+		public $version = '1.2';
 
 		/**
 		 * The single instance of the class.
@@ -305,6 +305,11 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
                     right: <?php echo $margin_horizontal; ?>px;
                 }
 
+				.progress-wrap.btn-center {
+					inset-inline: 0;
+					margin-inline: auto;
+				}
+
                 .progress-wrap::after {
                     width: <?php echo $button_size; ?>px;
                     height: <?php echo $button_size; ?>px;
@@ -402,10 +407,10 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 			$view_box           = '-' . $size / 2 . ' -' . $size / 2 . ' ' . ( 100 + $size ) . ' ' . ( 100 + $size );
 			$button_position    = self::get_settings( 'button_position', 'right-side' );
 			$is_enable_progress = self::get_settings( 'is_enable_progress', 'on' );
-			$position_class     = ( $button_position == 'left-side' ) ? 'btn-left-side' : 'btn-right-side';
+			//$position_class     = ( $button_position == 'left-side' ) ? 'btn-left-side' : 'btn-right-side';
 			?>
 
-            <div class="progress-wrap <?php echo $position_class; ?>">
+            <div class="progress-wrap <?php echo 'btn-' . $button_position; ?>">
 				<?php if ( $is_enable_progress == 'on' ) { ?>
                     <svg class="progress-circle" width="100%" height="100%" viewBox="<?php echo $view_box; ?>">
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>

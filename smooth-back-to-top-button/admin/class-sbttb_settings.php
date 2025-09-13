@@ -107,6 +107,7 @@ if ( ! class_exists( 'SBTTB_Settings' ) ):
                         'options' => array(
                             'left-side'  => esc_html__( 'Bottom Left Side', 'smooth-back-to-top-button' ),
                             'right-side' => esc_html__( 'Bottom Right Side', 'smooth-back-to-top-button' ),
+                            'center'     => esc_html__( 'Center', 'smooth-back-to-top-button' ),
                         ),
                         'default' => 'right-side',
                     ),
