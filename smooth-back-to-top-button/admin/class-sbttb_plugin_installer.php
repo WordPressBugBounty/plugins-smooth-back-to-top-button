@@ -85,9 +85,9 @@ if ( ! class_exists( 'SBTTB_Plugin_Installer' ) ) {
 
         public function add_plugin_notice() {
             ?>
-            <div class="inline notice updated woocommerce-message woocommerce-enable-variable-lowest-price-notice" style="margin: 15px;" data-nonce="<?php echo wp_create_nonce( 'install-woo-variable-lowest-price' ); ?>" data-installing="<?php esc_attr_e( 'Installing Plugin...', 'smooth-back-to-top-button' ); ?>" data-activated="<?php esc_attr_e( 'Plugin Installed. Please check the product page.', 'smooth-back-to-top-button' ); ?>">
+            <div id="message" class="inline updated woocommerce-message woocommerce-enable-variable-lowest-price-notice" style="margin: 15px;" data-nonce="<?php echo wp_create_nonce( 'install-woo-variable-lowest-price' ); ?>" data-installing="<?php esc_attr_e( 'Installing Plugin...', 'smooth-back-to-top-button' ); ?>" data-activated="<?php esc_attr_e( 'Plugin Installed. Please check the product page.', 'smooth-back-to-top-button' ); ?>">
                 <?php
-                printf( '<p> %s <a class="install-woo-variable-lowest-price-action" target="_blank" href="#">%s</a> %s</p>', esc_html__( 'Want to show only lowest price in variable products to encourage sells? Install ', 'smooth-back-to-top-button' ), esc_html__( 'WooCommerce Variation Price Display', 'smooth-back-to-top-button' ), esc_html__( 'plugin.', 'smooth-back-to-top-button' ) );
+                printf( '<p class="help"> %s <a class="install-woo-variable-lowest-price-action" target="_blank" href="#">%s</a> %s</p>', esc_html__( 'Want to show only lowest price in variable products to encourage sells? Install ', 'smooth-back-to-top-button' ), esc_html__( 'WooCommerce Variation Price Display', 'smooth-back-to-top-button' ), esc_html__( 'plugin.', 'smooth-back-to-top-button' ) );
                 ?>
             </div>
             <?php

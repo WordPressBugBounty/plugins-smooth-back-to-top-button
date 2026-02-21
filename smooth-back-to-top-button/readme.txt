@@ -1,11 +1,11 @@
 === Smooth Back To Top Button ===
 Contributors: tanvirul
 Donate link:
-Tags: scroll to top, back to top, back to top button, scroll top, scroll up, wordpress scroll top, scroll back to top, scroll progress indicator
+Tags: scroll to top, back to top, back to top button, scroll top, smooth back to top, scroll progress indicator
 Requires PHP: 7.4
 Requires at least: 4.8
-Tested up to: 6.8
-Stable tag: 1.2.0
+Tested up to: 6.9
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,40 +13,62 @@ Smooth Back To Top button with scroll progress indicator.
 
 == Description ==
 
-The WordPress Back To Top button with scroll progress indicator will allow your visitors to easily scroll back to the top of the page.
+Smooth Back To Top Button is a premium-quality WordPress plugin designed to improve website navigation and user experience. It adds a stylish, customizable back-to-top button with a unique scroll progress indicator, helping your visitors navigate long pages with ease.
 
-It’s a lightweight and fully customizable plugin that gives you lots of features such as:
+Effortlessly customize every aspect of your button to match your brand's identity. From shapes and colors to responsive visibility, this plugin provides all the tools you need in one lightweight package.
 
-= Features: =
-* Button shows when the user scrolls down the page.
-* Scroll back to top button with smooth animation.
-* Ready to use without any setup.
-* Smooth scroll progress indicator.
-* Change scroll duration.
-* Change button offset.
-* Unlimited colors option.
-* Icon fonts choose option.
-* Button position (left, right).
-* Button Auto hide.
-* Button Enable/Disable.
-* Progress Enable/Disable.
-* Custom size for button and icon.
-* Custom back to top button CSS support.
-* Show/Hide on small devices.
-* Async JavaScript.
-* Support on admin panel.
-* Compatible with all WordPress themes.
-* Cross-browser compatible.
-* Retina display support.
-* Translation ready.
-* Lightweight and fast.
+= Features =
+* **Modern & Elegant Design** 
+A sleek back-to-top button that enhances your site's aesthetics.
+
+* **Interactive Scroll Progress** 
+Unique progress indicator that visually tracks scroll depth.
+
+* **Fully Customizable Shapes** 
+Choose from Circle, Square, or Rounded Square to match your branding.
+
+* **Smart Responsive Controls** 
+Effortlessly show or hide the button on Desktop, Tablet, and Mobile devices.
+
+* **Advanced Accessibility** 
+Fully optimized for keyboard navigation and screen readers (Aria-label support).
+
+* **Live Color Customizer** 
+Unlimited color options for the button, icons, borders, and progress bar.
+
+* **Smooth Animations** 
+High-performance, butter-smooth scroll animations for a premium feel.
+
+* **Custom Positioning** 
+Place your button on the left, right, or centered at the bottom of the screen.
+
+* **Icon Library:** 
+Choose from a variety of modern font icons.
+
+* **Auto-Hide Functionality** 
+Automatically hide the button when not needed for a cleaner look.
+
+* **Developer Friendly** 
+Custom CSS support for advanced styling and overrides.
+
+* **Admin Dashboard Support** 
+Option to enable the button within the WordPress admin area.
+
+* **Lightweight & Performance Focused** 
+Minimal footprint with optimized scripts for blazing-fast load times.
+
+* **Theme & Browser Compatible** 
+Works flawlessly with all modern WordPress themes and browsers.
+
+* **Translation Ready** 
+Easily translate the plugin into any language.
 
 = Most useful WooCommerce plugins for your store =
 
-* [Variation Price Display For WooCommerce](https://wordpress.org/plugins/disable-variable-product-price-range-show-only-lowest-price-in-variable-products/)
-* [Add Quantity Field on Shop Page for WooCommerce](https://wordpress.org/plugins/quick-buy-now-button-for-woocommerce/)
 * [Quick Buy Now Button for WooCommerce](https://wordpress.org/plugins/add-quantity-field-on-shop-page-for-woocommerce/)
 * [reCaptcha for WooCommerce](https://wordpress.org/plugins/advanced-google-recaptcha-for-woocommerce/)
+* [Variation Price Display For WooCommerce](https://wordpress.org/plugins/disable-variable-product-price-range-show-only-lowest-price-in-variable-products/)
+* [Add Quantity Field on Shop Page for WooCommerce](https://wordpress.org/plugins/quick-buy-now-button-for-woocommerce/)
 
 == Installation ==
 ###Automatic Install From WordPress Dashboard
@@ -83,6 +105,14 @@ If you are unable to use any of the methods due to internet connectivity and fil
 2. Smooth Back To Top Button settings page.
 
 == Changelog ==
+ 
+= 1.3.0 =
+* Add - WordPress 6.9+ compatibility.
+* Add: Button Shape option (Circle, Square, Rounded Square).
+* Add: Button hide on desktop devices option.
+* Add: Button accessibility
+* Update: Optimize scripts
+* Fix: Type hints for get_settings function.
 
 = 1.1.16 =
 * Add - WordPress 6.8+ compatibility.

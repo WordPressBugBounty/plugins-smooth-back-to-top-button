@@ -77,14 +77,6 @@ if ( ! class_exists( 'SBTTB_Settings' ) ):
                     ),
 
                     array(
-                        'name'    => 'is_enable_async',
-                        'label'   => esc_html__( 'JavaScript Async', 'smooth-back-to-top-button' ),
-                        'desc'    => esc_html__( 'To increase site performance, keep it enabled, if there has no conflicts.', 'smooth-back-to-top-button' ),
-                        'type'    => 'checkbox',
-                        'default' => 'off'
-                    ),
-
-                    array(
                         'name'    => 'icon_type',
                         'label'   => esc_html__( 'Icon Type', 'smooth-back-to-top-button' ),
                         'type'    => 'radio',
@@ -110,6 +102,18 @@ if ( ! class_exists( 'SBTTB_Settings' ) ):
                             'center'     => esc_html__( 'Center', 'smooth-back-to-top-button' ),
                         ),
                         'default' => 'right-side',
+                    ),
+
+                    array(
+                        'name'    => 'button_shape',
+                        'label'   => esc_html__( 'Button Shape', 'smooth-back-to-top-button' ),
+                        'type'    => 'select',
+                        'options' => array(
+                            'circle'         => esc_html__( 'Circle', 'smooth-back-to-top-button' ),
+                            'square'         => esc_html__( 'Square', 'smooth-back-to-top-button' ),
+                            'rounded-square' => esc_html__( 'Rounded Square', 'smooth-back-to-top-button' ),
+                        ),
+                        'default' => 'circle',
                     ),
 
                     array(
@@ -248,6 +252,13 @@ if ( ! class_exists( 'SBTTB_Settings' ) ):
 		                'name'    => 'hide_on_tablet',
 		                'label'   => esc_html__( 'Hide on Tablet Layout', 'smooth-back-to-top-button' ),
 		                'desc'    => esc_html__( 'Minimum width is 768px and maximum width is 991px.', 'smooth-back-to-top-button' ),
+		                'type'    => 'checkbox',
+		                'default' => 'off'
+	                ),
+	                array(
+		                'name'    => 'hide_on_desktop',
+		                'label'   => esc_html__( 'Hide on Desktop Layout', 'smooth-back-to-top-button' ),
+		                'desc'    => esc_html__( 'Minimum width is 992px.', 'smooth-back-to-top-button' ),
 		                'type'    => 'checkbox',
 		                'default' => 'off'
 	                ),

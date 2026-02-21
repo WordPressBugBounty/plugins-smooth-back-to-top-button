@@ -1,28 +1,47 @@
-(function ($) {
+(function () {
     "use strict";
 
-    jQuery(window).on('load', function () {
+    function initButton() {
+        var buttonPath = document.querySelector('.smooth-back-to-top-button path, .smooth-back-to-top-button rect');
 
-        var progressPath = document.querySelector('.progress-wrap path');
-        var pathLength = progressPath.getTotalLength();
+        if (!buttonPath) {
+            return;
+        }
 
-        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-        progressPath.style.strokeDashoffset = pathLength;
-        progressPath.getBoundingClientRect();
-        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+        var pathLength = buttonPath.getTotalLength();
 
-        var updateProgress = function () {
-            var scroll = jQuery(window).scrollTop();
-            var height = jQuery(document).height() - jQuery(window).height();
-            var progress = pathLength - (scroll * pathLength / height);
-            progressPath.style.strokeDashoffset = progress;
+        buttonPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        buttonPath.style.strokeDashoffset = pathLength;
+
+        var isTicking = false;
+
+        var updateButtonProgress = function () {
+            var scroll = window.scrollY;
+            var height = document.documentElement.scrollHeight - window.innerHeight;
+
+            // Calculate progress, handling division by zero if page is smaller than viewport
+            var progress = height > 0 ? pathLength - (scroll * pathLength / height) : pathLength;
+
+            buttonPath.style.strokeDashoffset = progress;
+            isTicking = false;
         };
 
-        updateProgress();
+        var onScroll = function () {
+            if (!isTicking) {
+                window.requestAnimationFrame(updateButtonProgress);
+                isTicking = true;
+            }
+        };
 
-        jQuery(window).scroll(updateProgress);
+        updateButtonProgress();
 
-    });
+        // Use passive listener for better scroll performance on mobile
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
 
-})(jQuery);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initButton);
+    } else {
+        initButton();
+    }
+})();

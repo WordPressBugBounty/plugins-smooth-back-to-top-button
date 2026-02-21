@@ -5,10 +5,10 @@ Plugin URI: https://wordpress.org/plugins/smooth-back-to-top-button/
 Description: The best WordPress smooth back to top button plugin with scroll progress indicator.
 Author: Tanvirul Haque
 Author URI: https://wpxpress.net/
-Version: 1.2
+Version: 1.3.0
 Requires PHP: 7.4
 Requires at least: 4.8
-Tested up to: 6.8
+Tested up to: 6.9
 Text Domain: smooth-back-to-top-button
 Domain Path: /languages
 License: GPLv2 or later
@@ -33,7 +33,7 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 		 * @since 1.0.0
 		 * @var  string
 		 */
-		public $version = '1.2';
+		public $version = '1.3.0';
 
 		/**
 		 * The single instance of the class.
@@ -197,7 +197,7 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 
 			wp_register_style( 'sbttb-fonts', SBTTB_ASSETS . '/css/sbttb-fonts.css', array(), SBTTB_VERSION );
 			wp_register_style( 'sbttb-style', SBTTB_ASSETS . '/css/smooth-back-to-top-button.css', array(), SBTTB_VERSION );
-			wp_register_script( 'sbttb-script', SBTTB_ASSETS . '/js/smooth-back-to-top-button.js', array( 'jquery' ), SBTTB_VERSION, true );
+			wp_register_script( 'sbttb-script', SBTTB_ASSETS . '/js/smooth-back-to-top-button.js', array(), SBTTB_VERSION, true );
 
 			wp_enqueue_style( 'sbttb-fonts' );
 			wp_enqueue_style( 'sbttb-style' );
@@ -210,7 +210,7 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 
             if ( 'on' == $is_admin_enable ) {
 	            wp_register_style( 'sbttb-style', SBTTB_ASSETS . '/css/smooth-back-to-top-button.css', array(), SBTTB_VERSION );
-	            wp_register_script( 'sbttb-script', SBTTB_ASSETS . '/js/smooth-back-to-top-button.js', array( 'jquery' ), SBTTB_VERSION, true );
+	            wp_register_script( 'sbttb-script', SBTTB_ASSETS . '/js/smooth-back-to-top-button.js', array(), SBTTB_VERSION, true );
 
 	            wp_enqueue_style( 'sbttb-style' );
 	            wp_enqueue_script( 'sbttb-script' );
@@ -225,10 +225,10 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 		 * Get Settings Function
 		 *
 		 * @param $key
-		 * @param bool $default
+		 * @param mixed $default
 		 * @param string $section
 		 *
-		 * @return bool
+		 * @return mixed
 		 */
 		public static function get_settings( $key, $default = false, $section = 'sbttb_settings' ) {
 			$settings = get_option( $section, [] );
@@ -254,14 +254,28 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 			$border_size		= absint( self::get_settings( 'border_size', '2' ) );
 			$icon_size			= absint( self::get_settings( 'icon_size', '24' ) );
 			$progress_size		= absint( self::get_settings( 'progress_size', '4' ) );
-			$button_color		= esc_attr( self::get_settings( 'button_color', '#0000' ) );
+			$button_color		= esc_attr( self::get_settings( 'button_color', '#000000' ) );
 			$border_color		= esc_attr( self::get_settings( 'border_color', '#cccccc' ) );
 			$icon_color			= esc_attr( self::get_settings( 'icon_color', '#1f2029' ) );
 			$progress_color		= esc_attr( self::get_settings( 'progress_color', '#1f2029' ) );
 			$hover_color		= esc_attr( self::get_settings( 'hover_color', '#1f2029' ) );
 			$is_hide_mobile		= self::get_settings( 'hide_on_mobile', 'off' );
 			$is_hide_tablet		= self::get_settings( 'hide_on_tablet', 'off' );
+			$is_hide_desktop	= self::get_settings( 'hide_on_desktop', 'off' );
+			$button_shape		= self::get_settings( 'button_shape', 'circle' );
 			$custom_css			= wp_filter_nohtml_kses( self::get_settings( 'sbttb_custom_css', '' ) );
+
+			switch ( $button_shape ) {
+				case 'square':
+					$border_radius = '0';
+					break;
+				case 'rounded-square':
+					$border_radius = '8px';
+					break;
+				default:
+					$border_radius = $button_size . 'px';
+					break;
+			}
 
 			switch ( $icon_type ) {
 				case 'arrow-up-bold' :
@@ -288,51 +302,56 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 			?>
 
             <style type="text/css">
-                .progress-wrap {
+                .smooth-back-to-top-button {
                     bottom: <?php echo $margin_vertical; ?>px;
                     height: <?php echo $button_size; ?>px;
                     width: <?php echo $button_size; ?>px;
-                    border-radius: <?php echo $button_size; ?>px;
+                    border-radius: <?php echo $border_radius; ?>;
                     background-color: <?php echo $button_color; ?>;
                     box-shadow: inset 0 0 0 <?php echo $border_size; ?>px <?php echo $border_color; ?>;
                 }
 
-                .progress-wrap.btn-left-side {
+                .smooth-back-to-top-button.btn-left-side {
                     left: <?php echo $margin_horizontal; ?>px;
                 }
 
-                .progress-wrap.btn-right-side {
+                .smooth-back-to-top-button.btn-right-side {
                     right: <?php echo $margin_horizontal; ?>px;
                 }
 
-				.progress-wrap.btn-center {
+				.smooth-back-to-top-button.btn-center {
 					inset-inline: 0;
 					margin-inline: auto;
 				}
 
-                .progress-wrap::after {
-                    width: <?php echo $button_size; ?>px;
-                    height: <?php echo $button_size; ?>px;
+                .smooth-back-to-top-button::after {
+                    height: 100%;
                     color: <?php echo $icon_color; ?>;
                     font-size: <?php echo $icon_size; ?>px;
                     content: '<?php echo $icon; ?>';
-                    line-height: <?php echo $button_size; ?>px;
+                    line-height: normal;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
 
-                .progress-wrap:hover::after {
+                .smooth-back-to-top-button:hover::after {
                     color: <?php echo $hover_color; ?>;
                 }
 
-                .progress-wrap svg.progress-circle path {
+                .smooth-back-to-top-button svg.progress-circle path,
+                .smooth-back-to-top-button svg.progress-circle rect {
                     stroke: <?php echo $progress_color; ?>;
                     stroke-width: <?php echo $progress_size; ?>px;
+                    z-index: 5;
                 }
 
                 <?php echo $custom_css ? $custom_css : ''; ?>
 
                 <?php if ( $is_hide_tablet == 'on' ) { ?>
                 @media only screen and (min-width: 768px) and (max-width: 991px) {
-                    .progress-wrap {
+                    .smooth-back-to-top-button {
                         display: none;
                     }
                 }
@@ -340,7 +359,15 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 
                 <?php if ( $is_hide_mobile == 'on' ) { ?>
                 @media only screen and (max-width: 767px) {
-                    .progress-wrap {
+                    .smooth-back-to-top-button {
+                        display: none;
+                    }
+                }
+                <?php } ?>
+
+                <?php if ( $is_hide_desktop == 'on' ) { ?>
+                @media only screen and (min-width: 992px) {
+                    .smooth-back-to-top-button {
                         display: none;
                     }
                 }
@@ -364,29 +391,43 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 
 			$button_offset   = absint( self::get_settings( 'button_offset', '50' ) );
 			$scroll_duration = absint( self::get_settings( 'scroll_duration', '500' ) );
-			$is_enable_async = self::get_settings( 'is_enable_async', 'off' );
-			$js_async		 = ( 'on' == $is_enable_async ) ? ' async="async" defer="defer"' : '' ;
 			?>
 
-            <script type="text/javascript"<?php echo $js_async; ?>>
-                var offset = <?php echo $button_offset; ?>;
-                var duration = <?php echo $scroll_duration; ?>;
+            <script type="text/javascript" data-no-optimize="1">
+                (function () {
+                    var offset = <?php echo $button_offset; ?>;
+                    var duration = <?php echo $scroll_duration; ?>;
 
-                jQuery(window).on('load', function () {
-                	jQuery(window).on('scroll', function () {
-	                    if (jQuery(this).scrollTop() > offset) {
-	                        jQuery('.progress-wrap').addClass('active-progress');
-	                    } else {
-	                        jQuery('.progress-wrap').removeClass('active-progress');
-	                    }
-	                });
+                    function initButton() {
+                        var buttonWrap = document.querySelector('.smooth-back-to-top-button');
+                        if (!buttonWrap) return;
 
-	                jQuery('.progress-wrap').on('click', function (e) {
-	                    e.preventDefault();
-	                    jQuery('html, body').animate({scrollTop: 0}, duration);
-	                    return false;
-	                })
-                })
+                        window.addEventListener('scroll', function () {
+                            if (window.scrollY > offset) {
+                                buttonWrap.classList.add('active-progress');
+                            } else {
+                                buttonWrap.classList.remove('active-progress');
+                            }
+                        });
+
+                        buttonWrap.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        });
+
+                        buttonWrap.addEventListener('keydown', function (e) {
+                            if (e.key !== 'Enter' && e.key !== ' ') return;
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        });
+                    }
+
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', initButton);
+                    } else {
+                        initButton();
+                    }
+                })();
             </script>
 
 			<?php
@@ -410,10 +451,16 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 			//$position_class     = ( $button_position == 'left-side' ) ? 'btn-left-side' : 'btn-right-side';
 			?>
 
-            <div class="progress-wrap <?php echo 'btn-' . $button_position; ?>">
-				<?php if ( $is_enable_progress == 'on' ) { ?>
-                    <svg class="progress-circle" width="100%" height="100%" viewBox="<?php echo $view_box; ?>">
-                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+            <div class="smooth-back-to-top-button <?php echo 'btn-' . $button_position; ?>" role="button" tabindex="0" aria-label="<?php esc_attr_e( 'Back to top', 'smooth-back-to-top-button' ); ?>">
+				<?php if ( $is_enable_progress == 'on' ) { 
+					$button_shape = self::get_settings( 'button_shape', 'circle' );
+					?>
+                    <svg class="progress-circle" width="100%" height="100%" viewBox="<?php echo $view_box; ?>" aria-hidden="true">
+						<?php if ( 'circle' !== $button_shape ) : ?>
+							<rect x="1" y="1" width="98" height="98" rx="<?php echo 'rounded-square' === $button_shape ? '15' : '0'; ?>" fill="none" />
+						<?php else : ?>
+							<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+						<?php endif; ?>
                     </svg>
 				<?php } ?>
             </div>
