@@ -5,7 +5,7 @@ Plugin URI: https://wordpress.org/plugins/smooth-back-to-top-button/
 Description: The best WordPress smooth back to top button plugin with scroll progress indicator.
 Author: Tanvirul Haque
 Author URI: https://wpxpress.net/
-Version: 1.3.0
+Version: 1.3.1
 Requires PHP: 7.4
 Requires at least: 4.8
 Tested up to: 6.9
@@ -33,7 +33,7 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 		 * @since 1.0.0
 		 * @var  string
 		 */
-		public $version = '1.3.0';
+		public $version = '1.3.1';
 
 		/**
 		 * The single instance of the class.
@@ -109,10 +109,7 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 			if ( is_admin() ) {
 				require_once SBTTB_ADMIN . '/class-sbttb_settings_api.php';
 				require_once SBTTB_ADMIN . '/class-sbttb_settings.php';
-
-				if ( class_exists( 'WooCommerce' ) && ! class_exists( 'Woo_Disable_Variable_Price_Range' ) ) {
-                    require_once SBTTB_ADMIN . '/class-sbttb_plugin_installer.php';
-                }
+				require_once SBTTB_ADMIN . '/class-sbttb_plugin_feed.php';
 			}
 		}
 
@@ -182,7 +179,7 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 		 * @return array
 		 */
 		public function plugin_settings_links( $links ) {
-			$links[] = '<a href="' . admin_url( 'admin.php?page=' ) . 'smooth-back-to-top">' . __( 'Settings', 'smooth-back-to-top-button' ) . '</a>';
+			$links[] = '<a href="' . admin_url( 'options-general.php?page=' ) . 'smooth-back-to-top">' . __( 'Settings', 'smooth-back-to-top-button' ) . '</a>';
 
 			return $links;
 		}
@@ -480,6 +477,11 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 function smooth_back_to_top_button() {
 	return Smooth_Back_To_Top_Button::instance();
 }
+
+// Activation redirect
+register_activation_hook( __FILE__, function () {
+	set_transient( 'sbttb_activation_redirect', true, 30 );
+} );
 
 // Kick Off
 smooth_back_to_top_button();

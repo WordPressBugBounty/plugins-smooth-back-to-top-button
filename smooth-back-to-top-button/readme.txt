@@ -5,7 +5,7 @@ Tags: scroll to top, back to top, back to top button, scroll top, smooth back to
 Requires PHP: 7.4
 Requires at least: 4.8
 Tested up to: 6.9
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +42,7 @@ High-performance, butter-smooth scroll animations for a premium feel.
 * **Custom Positioning** 
 Place your button on the left, right, or centered at the bottom of the screen.
 
-* **Icon Library:** 
+* **Icon Library** 
 Choose from a variety of modern font icons.
 
 * **Auto-Hide Functionality** 
@@ -106,6 +106,9 @@ If you are unable to use any of the methods due to internet connectivity and fil
 
 == Changelog ==
  
+= 1.3.1 =
+* Update: Admin scripts
+
 = 1.3.0 =
 * Add - WordPress 6.9+ compatibility.
 * Add: Button Shape option (Circle, Square, Rounded Square).

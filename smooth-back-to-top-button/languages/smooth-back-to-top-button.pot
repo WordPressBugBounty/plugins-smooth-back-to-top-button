@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Smooth Back To Top Button\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-21 04:55+0000\n"
+"POT-Creation-Date: 2026-05-15 04:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,127 +16,127 @@ msgstr ""
 "X-Loco-Version: 2.6.1; wp-6.2.2\n"
 "X-Domain: smooth-back-to-top-button"
 
-#: smooth-back-to-top-button.php:454
+#: smooth-back-to-top-button.php:451
 msgid "Back to top"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:25
+#: admin/class-sbttb_settings.php:46
 msgid "Back To Top Button"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:37
+#: admin/class-sbttb_settings.php:58
 msgid "Back To Top Button Settings"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:100
+#: admin/class-sbttb_settings.php:121
 msgid "Bottom Left Side"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:101
+#: admin/class-sbttb_settings.php:122
 msgid "Bottom Right Side"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:210
+#: admin/class-sbttb_settings.php:231
 msgid "Button Background Color"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:217
+#: admin/class-sbttb_settings.php:238
 msgid "Button Border Color"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:168
+#: admin/class-sbttb_settings.php:189
 msgid "Button Border Size"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:238
+#: admin/class-sbttb_settings.php:259
 msgid "Button Hover Color"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:130
+#: admin/class-sbttb_settings.php:151
 msgid "Button Margin Horizontally"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:121
+#: admin/class-sbttb_settings.php:142
 msgid "Button Margin Vertically"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:139
+#: admin/class-sbttb_settings.php:160
 msgid "Button Offset"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:97
+#: admin/class-sbttb_settings.php:118
 msgid "Button Position"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:109
+#: admin/class-sbttb_settings.php:130
 msgid "Button Shape"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:159
+#: admin/class-sbttb_settings.php:180
 msgid "Button Size"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:102
+#: admin/class-sbttb_settings.php:123
 msgid "Center"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:112
+#: admin/class-sbttb_settings.php:133
 msgid "Circle"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:268
+#: admin/class-sbttb_settings.php:289
 msgid "Custom CSS"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:140
+#: admin/class-sbttb_settings.php:161
 msgid "Distance from top in pixels before showing the button."
 msgstr ""
 
-#: smooth-back-to-top-button.php:170
+#: smooth-back-to-top-button.php:167
 msgid "Docs"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:73
+#: admin/class-sbttb_settings.php:94
 msgid "Enable Admin Panel"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:74
+#: admin/class-sbttb_settings.php:95
 msgid "Enable Back to Top button on admin panel?"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:58
+#: admin/class-sbttb_settings.php:79
 msgid "Enable Back to Top button?"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:57
+#: admin/class-sbttb_settings.php:78
 msgid "Enable Button"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:65
+#: admin/class-sbttb_settings.php:86
 msgid "Enable Scroll Progress"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:66
+#: admin/class-sbttb_settings.php:87
 msgid "Enable scroll progress indicator?"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:39
+#: admin/class-sbttb_settings.php:60
 msgid "Get Help &amp; Support"
 msgstr ""
 
-#: smooth-back-to-top-button.php:171
+#: smooth-back-to-top-button.php:168
 msgid "Help &amp; Support"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:260
+#: admin/class-sbttb_settings.php:281
 msgid "Hide on Desktop Layout"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:245
+#: admin/class-sbttb_settings.php:266
 msgid "Hide on Mobile Layout"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:253
+#: admin/class-sbttb_settings.php:274
 msgid "Hide on Tablet Layout"
 msgstr ""
 
@@ -148,88 +148,72 @@ msgstr ""
 msgid "https://wpxpress.net/"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:224
+#: admin/class-sbttb_settings.php:245
 msgid "Icon Color"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:179
+#: admin/class-sbttb_settings.php:200
 msgid "Icon Size"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:81
+#: admin/class-sbttb_settings.php:102
 msgid "Icon Type"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:149
+#: admin/class-sbttb_settings.php:170
 msgid "in milliseconds."
 msgstr ""
 
-#: admin/class-sbttb_settings.php:160 admin/class-sbttb_settings.php:169
-#: admin/class-sbttb_settings.php:180 admin/class-sbttb_settings.php:189
+#: admin/class-sbttb_settings.php:181 admin/class-sbttb_settings.php:190
+#: admin/class-sbttb_settings.php:201 admin/class-sbttb_settings.php:210
 msgid "in pixels."
 msgstr ""
 
-#: admin/class-sbttb_settings.php:131
+#: admin/class-sbttb_settings.php:152
 msgid "in pixels. It affects on button left and right position."
 msgstr ""
 
-#: admin/class-sbttb_settings.php:122
+#: admin/class-sbttb_settings.php:143
 msgid "in pixels. It affects on button top and bottom position."
 msgstr ""
 
-#: admin/class-sbttb_plugin_installer.php:48
-msgid "Install Now"
-msgstr ""
-
-#: admin/class-sbttb_plugin_installer.php:88
-msgid "Installing Plugin..."
-msgstr ""
-
-#: admin/class-sbttb_settings.php:40
+#: admin/class-sbttb_settings.php:61
 msgid "Leave a review here ⭐️⭐️⭐️⭐️⭐️"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:246
+#: admin/class-sbttb_settings.php:267
 msgid "Maximum width is 767px."
 msgstr ""
 
-#: admin/class-sbttb_settings.php:254
+#: admin/class-sbttb_settings.php:275
 msgid "Minimum width is 768px and maximum width is 991px."
 msgstr ""
 
-#: admin/class-sbttb_settings.php:261
+#: admin/class-sbttb_settings.php:282
 msgid "Minimum width is 992px."
-msgstr ""
-
-#: admin/class-sbttb_plugin_installer.php:88
-msgid "Plugin Installed. Please check the product page."
-msgstr ""
-
-#: admin/class-sbttb_plugin_installer.php:90
-msgid "plugin."
 msgstr ""
 
 #: admin/class-sbttb_settings_api.php:621
 msgid "PRO"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:231
+#: admin/class-sbttb_settings.php:252
 msgid "Progress Color"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:188
+#: admin/class-sbttb_settings.php:209
 msgid "Progress Size"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:114
+#: admin/class-sbttb_settings.php:135
 msgid "Rounded Square"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:148
+#: admin/class-sbttb_settings.php:169
 msgid "Scroll Duration"
 msgstr ""
 
-#: smooth-back-to-top-button.php:185
+#: smooth-back-to-top-button.php:182
 msgid "Settings"
 msgstr ""
 
@@ -237,7 +221,7 @@ msgstr ""
 msgid "Smooth Back To Top Button"
 msgstr ""
 
-#: admin/class-sbttb_settings.php:113
+#: admin/class-sbttb_settings.php:134
 msgid "Square"
 msgstr ""
 
@@ -251,20 +235,10 @@ msgid ""
 "indicator."
 msgstr ""
 
-#: admin/class-sbttb_settings.php:38
+#: admin/class-sbttb_settings.php:59
 msgid "The following options control the Back to Top button."
 msgstr ""
 
 #: admin/class-sbttb_settings_api.php:622
 msgid "UPGRADE TO PRO"
-msgstr ""
-
-#: admin/class-sbttb_plugin_installer.php:90
-msgid ""
-"Want to show only lowest price in variable products to encourage sells? "
-"Install "
-msgstr ""
-
-#: admin/class-sbttb_plugin_installer.php:90
-msgid "WooCommerce Variation Price Display"
 msgstr ""

@@ -10,6 +10,27 @@ if ( ! class_exists( 'SBTTB_Settings' ) ):
 
             add_action( 'admin_init', array( $this, 'admin_init' ) );
             add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+            add_action( 'admin_init', array( $this, 'activation_redirect' ) );
+        }
+
+        /**
+         * Redirect to plugin settings page after activation.
+         *
+         * @return void
+         */
+        function activation_redirect() {
+            if ( ! get_transient( 'sbttb_activation_redirect' ) ) {
+                return;
+            }
+
+            delete_transient( 'sbttb_activation_redirect' );
+
+            if ( wp_doing_ajax() || is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+                return;
+            }
+
+            wp_safe_redirect( admin_url( 'options-general.php?page=smooth-back-to-top' ) );
+            exit;
         }
 
         function admin_init() {
