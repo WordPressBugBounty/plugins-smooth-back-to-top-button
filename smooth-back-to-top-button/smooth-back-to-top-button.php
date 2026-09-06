@@ -5,10 +5,10 @@ Plugin URI: https://wordpress.org/plugins/smooth-back-to-top-button/
 Description: The best WordPress smooth back to top button plugin with scroll progress indicator.
 Author: Tanvirul Haque
 Author URI: https://wpxpress.net/
-Version: 1.3.1
+Version: 1.3.2
 Requires PHP: 7.4
 Requires at least: 4.8
-Tested up to: 6.9
+Tested up to: 7.1
 Text Domain: smooth-back-to-top-button
 Domain Path: /languages
 License: GPLv2 or later
@@ -33,7 +33,7 @@ if ( ! class_exists( 'Smooth_Back_To_Top_Button' ) ) {
 		 * @since 1.0.0
 		 * @var  string
 		 */
-		public $version = '1.3.1';
+		public $version = '1.3.2';
 
 		/**
 		 * The single instance of the class.
